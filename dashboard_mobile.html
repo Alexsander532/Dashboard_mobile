@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Móvel - Solução Climática Inteligente</title>
+    <!-- Carregamento do Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Definindo a fonte Inter e cores base */
+        :root {
+            --color-nasa-blue-dark: #1e3a8a; /* Dark Blue */
+            --color-nasa-blue-medium: #3b82f6; /* Medium Blue */
+            --color-nasa-gray: #1f2937; /* Dark Gray */
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            padding: 20px 0;
+        }
+        /* Estilo para simular o corpo do celular (Mobile Frame) */
+        .mobile-frame {
+            width: 100%;
+            max-width: 400px; /* Largura típica de celular */
+            min-height: 800px; /* Altura de celular */
+            background-color: white;
+            border: 12px solid #1f2937; /* Borda preta do celular */
+            border-radius: 40px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            position: relative;
+            margin-top: 20px;
+        }
+        /* Status Bar Mockup */
+        .status-bar {
+            background-color: #1f2937;
+            color: white;
+            font-size: 0.75rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 4px 16px;
+        }
+        .report-card {
+            box-shadow: 0 4px 15px rgba(30, 58, 138, 0.1);
+            transition: transform 0.3s ease;
+            margin-bottom: 20px;
+            border-radius: 16px;
+        }
+        .report-card:hover {
+            transform: translateY(-2px);
+        }
+        .header-bg {
+            background-color: var(--color-nasa-blue-dark);
+            background-image: linear-gradient(135deg, var(--color-nasa-blue-dark) 0%, #3b82f6 100%);
+        }
+    </style>
+</head>
+<body>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'nasa-dark-blue': '#1e3a8a',
+                        'nasa-medium-blue': '#3b82f6',
+                        'nasa-text-dark': '#1f2937',
+                    },
+                },
+            },
+        }
+    </script>
+
+    <div class="mobile-frame">
+        <!-- SIMULAÇÃO DA BARRA DE STATUS DO CELULAR -->
+        <div class="status-bar">
+            <span>9:41 AM</span>
+            <div class="flex items-center space-x-1">
+                <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a8 8 0 100 16 8 8 0 000-16zM6 10a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1z"></path></svg>
+                <span>80%</span>
+            </div>
+        </div>
+
+        <div class="p-4 overflow-y-auto">
+            <header class="text-center mb-6 pt-2">
+                <!-- LINK REMOVIDO CONFORME SOLICITADO -->
+                <h1 class="text-2xl font-extrabold text-nasa-dark-blue mb-1">
+                    Solução Climática Inteligente
+                </h1>
+                <p class="text-sm text-nasa-text-dark">
+                    Dashboard Móvel: Insights Acionáveis
+                </p>
+                <hr class="mt-3 border-t-2 border-nasa-medium-blue w-12 mx-auto rounded-full">
+            </header>
+
+            <!-- AQUI O LAYOUT MUDA PARA COLUNA SIMPLES DENTRO DO MOBILE FRAME -->
+            <div class="space-y-6">
+
+                <!-- 1. TURISMO E HOSPITALIDADE (CORRIGIDO) -->
+                <div class="report-card bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100">
+                    <div class="header-bg p-3 text-white text-center">
+                        <h2 class="text-lg font-bold">1. Turismo e Hospitalidade</h2>
+                        <p class="text-xs opacity-90">Previsão e Experiência do Hóspede</p>
+                    </div>
+                    <div class="p-4 text-nasa-text-dark">
+                        <table class="w-full text-xs">
+                            <tbody>
+                                <tr class="border-b border-gray-100">
+                                    <td class="py-1 font-semibold text-nasa-medium-blue">Localização / Período</td>
+                                    <td class="py-1 text-right">Ipanema / 4 dias de estadia</td>
+                                </tr>
+                                <tr class="border-b border-gray-100 bg-gray-50">
+                                    <td class="py-1 font-semibold text-nasa-medium-blue">Condição Dominante</td>
+                                    <td class="py-1 text-right font-bold text-nasa-dark-blue">Estabilidade, Vento Forte</td>
+                                </tr>
+                                <tr class="border-b border-gray-100">
+                                    <td class="py-1 font-semibold text-nasa-medium-blue">Prob. Chuva</td>
+                                    <td class="py-1 text-right text-green-600 font-extrabold">10% (Muito Baixa)</td>
+                                </tr>
+                                <tr class="border-b border-gray-100 bg-gray-50">
+                                    <td class="py-1 font-semibold text-nasa-medium-blue">Alerta Específico</td>
+                                    <!-- CORREÇÃO: Removido asteriscos e garantido o negrito -->
+                                    <td class="py-1 text-right text-xs font-bold text-red-600">Ventos em média de 35 km/h na orla.</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="pt-3 pb-1 text-nasa-dark-blue font-bold text-sm">AÇÃO RECOMENDADA</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="pb-1 pt-0 text-xs italic text-center">Notificação Proativa ao Hóspede: "Sugestão para guardar objetos leves da sacada da varanda após as 17h."</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- 2. LOGÍSTICA E DELIVERY -->
+                <div class="report-card bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100">
+                    <div class="header-bg p-3 text-white text-center">
+                        <h2 class="text-lg font-bold">2. Logística e Delivery</h2>
+                        <p class="text-xs opacity-90">Otimização de Rotas e Segurança</p>
+                    </div>
+                    <div class="p-4 text-nasa-text-dark">
+                        <table class="w-full text-xs">
+                            <tbody>
+                                <tr class="border-b border-gray-100">
+                                    <td class="py-1 font-semibold text-nasa-medium-blue">Região Monitorada</td>
+                                    <td class="py-1 text-right">Centro de Distribuição ZN-SP</td>
+                                </tr>
+                                <tr class="border-b border-gray-100 bg-gray-50">
+                                    <td class="py-1 font-semibold text-nasa-medium-blue">Período Crítico</td>
+                                    <td class="py-1 text-right font-bold text-red-600">Próximas 2 horas (18h às 20h)</td>
+                                </tr>
+                                <tr class="border-b border-gray-100">
+                                    <td class="py-1 font-semibold text-nasa-medium-blue">Volume de Precipitação</td>
+                                    <td class="py-1 text-right font-extrabold text-nasa-dark-blue">35 mm (Alto Risco)</td>
+                                </tr>
+                                <tr class="border-b border-gray-100 bg-gray-50">
+                                    <td class="py-1 font-semibold text-nasa-medium-blue">Condição Dominante</td>
+                                    <td class="py-1 text-right text-xs">Chuva Forte e Risco de Alagamento.</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="pt-3 pb-1 text-nasa-dark-blue font-bold text-sm">AÇÃO RECOMENDADA</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="pb-1 pt-0 text-xs italic text-center">Ativar modo de contingência; bloquear rotas de motocicleta em vias de risco; estender prazo em 25 min.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- 3. TRANSPORTE URBANO -->
+                <div class="report-card bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100">
+                    <div class="header-bg p-3 text-white text-center">
+                        <h2 class="text-lg font-bold">3. Transporte Urbano</h2>
+                        <p class="text-xs opacity-90">Previsão de Tráfego e Precificação Inteligente</p>
+                    </div>
+                    <div class="p-4 text-nasa-text-dark">
+                        <table class="w-full text-xs">
+                            <tbody>
+                                <tr class="border-b border-gray-100">
+                                    <td class="py-1 font-semibold text-nasa-medium-blue">Área Crítica</td>
+                                    <td class="py-1 text-right">Túnel Rebouças, Rio de Janeiro</td>
+                                </tr>
+                                <tr class="border-b border-gray-100 bg-gray-50">
+                                    <td class="py-1 font-semibold text-nasa-medium-blue">Fator Crítico</td>
+                                    <td class="py-1 text-right font-bold text-nasa-dark-blue">Névoa Intensa (Baixa Visibilidade)</td>
+                                </tr>
+                                <tr class="border-b border-gray-100">
+                                    <td class="py-1 font-semibold text-nasa-medium-blue">Visibilidade Estimada</td>
+                                    <td class="py-1 text-right font-extrabold text-red-600">Abaixo de 500 metros</td>
+                                </tr>
+                                <tr class="border-b border-gray-100 bg-gray-50">
+                                    <td class="py-1 font-semibold text-nasa-medium-blue">Dados NASA (AOD)</td>
+                                    <td class="py-1 text-right text-xs">Profundidade Óptica de Aerossóis fora do limite.</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="pt-3 pb-1 text-nasa-dark-blue font-bold text-sm">AÇÃO RECOMENDADA</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="pb-1 pt-0 text-xs italic text-center">Alerta de segurança imediato para motoristas; Aumentar preço dinâmico em 1.2x nas rotas afetadas.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- 4. AGRICULTURA -->
+                <div class="report-card bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100">
+                    <div class="header-bg p-3 text-white text-center">
+                        <h2 class="text-lg font-bold">4. Agricultura</h2>
+                        <p class="text-xs opacity-90">Gestão de Irrigação e Risco de Pragas</p>
+                    </div>
+                    <div class="p-4 text-nasa-text-dark">
+                        <table class="w-full text-xs">
+                            <tbody>
+                                <tr class="border-b border-gray-100">
+                                    <td class="py-1 font-semibold text-nasa-medium-blue">Cultura Monitorada</td>
+                                    <td class="py-1 text-right">Soja (Fase V4 - Desenvolvimento)</td>
+                                </tr>
+                                <tr class="border-b border-gray-100 bg-gray-50">
+                                    <td class="py-1 font-semibold text-nasa-medium-blue">Condição Crítica</td>
+                                    <td class="py-1 text-right font-bold text-red-600">Estresse Hídrico Crítico</td>
+                                </tr>
+                                <tr class="border-b border-gray-100">
+                                    <td class="py-1 font-semibold text-nasa-medium-blue">Índice de Seca (SPI)</td>
+                                    <td class="py-1 text-right font-extrabold text-nasa-dark-blue">-1.8 (Seca Severa)</td>
+                                </tr>
+                                <tr class="border-b border-gray-100 bg-gray-50">
+                                    <td class="py-1 font-semibold text-nasa-medium-blue">Alerta de Praga</td>
+                                    <td class="py-1 text-right text-xs">Risco **Alto** de ácaros por baixa umidade.</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="pt-3 pb-1 text-nasa-dark-blue font-bold text-sm">AÇÃO RECOMENDADA</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="pb-1 pt-0 text-xs italic text-center">Ativação Imediata de Irrigação (50mm nas 24h); Preparação para manejo integrado de pragas.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- 5. SEGUROS -->
+                <div class="report-card bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100">
+                    <div class="header-bg p-3 text-white text-center">
+                        <h2 class="text-lg font-bold">5. Seguros</h2>
+                        <p class="text-xs opacity-90">Mitigação de Sinistros e Gestão de Risco</p>
+                    </div>
+                    <div class="p-4 text-nasa-text-dark">
+                        <table class="w-full text-xs">
+                            <tbody>
+                                <tr class="border-b border-gray-100">
+                                    <td class="py-1 font-semibold text-nasa-medium-blue">Área de Risco</td>
+                                    <td class="py-1 text-right">Jardim Paulista, São Paulo (Apólices Residenciais)</td>
+                                </tr>
+                                <tr class="border-b border-gray-100 bg-gray-50">
+                                    <td class="py-1 font-semibold text-nasa-medium-blue">Fator Crítico</td>
+                                    <td class="py-1 text-right font-bold text-red-600">Chuva de Granizo e Vento Forte</td>
+                                </tr>
+                                <tr class="border-b border-gray-100">
+                                    <td class="py-1 font-semibold text-nasa-medium-blue">Prob. Granizo / Vento</td>
+                                    <td class="py-1 text-right font-extrabold text-nasa-dark-blue">70% / 75 km/h</td>
+                                </tr>
+                                <tr class="border-b border-gray-100 bg-gray-50">
+                                    <td class="py-1 font-semibold text-nasa-medium-blue">Período de Risco</td>
+                                    <td class="py-1 text-right text-xs">Próximas 3 horas (15h às 18h)</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="pt-3 pb-1 text-nasa-dark-blue font-bold text-sm">AÇÃO RECOMENDADA</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="pb-1 pt-0 text-xs italic text-center">Disparar SMS/e-mail para 2.500 segurados com alerta; Pré-alocar equipe de sinistros na região.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div> <!-- Fim do Container de Conteúdo -->
+        </div>
+    </div> <!-- Fim do Mobile Frame -->
+
+</body>
+</html>
